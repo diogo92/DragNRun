@@ -11,8 +11,8 @@ public class SmoothCamera : MonoBehaviour
 
 	public Transform WaterPlane;
 
+
 	void Start(){
-	//	GetComponent<Camera> ().orthographic = true;
 	}
     private void LateUpdate()
     {
@@ -31,5 +31,6 @@ public class SmoothCamera : MonoBehaviour
 			WaterPlane.position = new Vector3 (-22, -10, transform.position.z);
 			WaterPlane.gameObject.GetComponent<MeshRenderer> ().material.mainTextureOffset += new Vector2 (0.1f*Time.deltaTime, 0.13f*Time.deltaTime);
 		}
+
     }
 }
