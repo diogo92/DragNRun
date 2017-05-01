@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelMaster : MonoBehaviour {
 	//Platform dragging speed
 	public float PlatformDragSpeed = 1f;
-
+	public GameObject CurrentPlatform = null;
 
 
 	// Use this for initialization
@@ -15,6 +15,5 @@ public class LevelMaster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }
