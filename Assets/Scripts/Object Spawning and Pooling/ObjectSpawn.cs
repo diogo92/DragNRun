@@ -64,6 +64,8 @@ public class ObjectSpawn : MonoBehaviour {
 		NewObstacle.transform.position = objectSpawnTransforms[randPos].position;
 		if (NewObstacle.GetComponent<SpikeObstacle> ())
 			NewObstacle.transform.parent = transform;
+		else if (NewObstacle.GetComponent<FallingObstacle> ())
+			NewObstacle.GetComponent<FallingObstacle> ().SpawnTransform = objectSpawnTransforms[randPos];
 		NewObstacle.transform.rotation = objectSpawnTransforms[randPos].rotation;
 		NewObstacle.SetActive (true);
 		SpawnedObjects.Add (NewObstacle);

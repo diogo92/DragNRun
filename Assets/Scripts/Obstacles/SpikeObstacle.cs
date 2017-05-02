@@ -15,6 +15,8 @@ public class SpikeObstacle : MonoBehaviour {
 	}
 
 	void OnEnable(){
+		transform.localScale *= 0.9f;
+
 	}
 
 	// Update is called once per frame

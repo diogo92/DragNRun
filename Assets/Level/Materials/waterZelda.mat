@@ -70,25 +70,25 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Angle: 7.2857146
-    - _Delta: 18.678572
+    - _Angle: 1
+    - _Delta: 1
     - _DissolveVal: 1.2
     - _EdgeLength: 10
-    - _Emboss: 0.09839281
-    - _Frequency: 1.3214285
-    - _HeightScale: 0.53653574
-    - _Intence: 381.25
-    - _Intensity: 7.4285717
+    - _Emboss: 0.01
+    - _Frequency: 1
+    - _HeightScale: 0.001
+    - _Intence: 10
+    - _Intensity: 1
     - _LineWidth: 0.007142857
-    - _NoiseScale: 0.14378572
+    - _NoiseScale: 0.001
     - _Outline: 0.005
     - _Parallax: 0.5
     - _Shininess: 0.078125
-    - _Speed: 0.054517858
-    - _SpeedX: 0.1335893
-    - _SpeedY: 0.1120536
+    - _Speed: 0.001
+    - _SpeedX: 0.001
+    - _SpeedY: 0.001
     - _SquashAmount: 1
-    - _WaveSpeed: 3.2210715
+    - _WaveSpeed: 0.01
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 0, b: 0, a: 1}

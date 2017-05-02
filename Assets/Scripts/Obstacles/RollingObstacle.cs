@@ -9,11 +9,12 @@ public class RollingObstacle : MonoBehaviour {
 	public float heightError = 0.02f;
 	private Rigidbody rb;
 	// Update is called once per frame
-	void Start(){
+	void Awake(){
 		rb = GetComponent<Rigidbody> ();
 	}
 
 	void OnEnable(){
+		transform.localPosition = new Vector3 (2.5f, transform.localPosition.y, transform.localPosition.z);
 		transform.localScale = new Vector3 (0.20648f, 0.20648f, 0.20648f);
 	}
 	void Update () {
@@ -24,4 +25,17 @@ public class RollingObstacle : MonoBehaviour {
 		}	
 			
 	}
+
+	void OnDisable(){
+		rb.velocity = Vector3.zero;
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.tag == "Player") {
+			//Destroy the obstacle
+			StartCoroutine(GetComponentInChildren<SplitMeshIntoTriangles>().SplitMesh());
+		}
+	}
+
 }

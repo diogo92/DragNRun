@@ -21,24 +21,19 @@ public class PlatformDrag : MonoBehaviour {
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-
 	void Update () {
-		//First check count of touch
-
 		if (Input.touchCount > 0) {
 			foreach (Touch touch in Input.touches) {
-				if (touch.phase == TouchPhase.Began && lm.CurrentPlatform == null) {
+				if (touch.phase == TouchPhase.Began) {
 					screenPoint = Camera.main.WorldToScreenPoint (gameObject.transform.position); // I removed this line to prevent centring 
 					RaycastHit hit;
-					if (Physics.Raycast (Camera.main.ScreenToWorldPoint (new Vector3(touch.position.x,touch.position.y,10f)), transform.position-Camera.main.transform.position, out hit)) {
-						if (hit.collider.gameObject == gameObject || hit.collider.gameObject.transform.IsChildOf(transform)) {
+					if (Physics.Raycast (Camera.main.ScreenToWorldPoint (touch.position), Camera.main.transform.forward, out hit)) {
+						if (hit.collider.gameObject == gameObject) {
 							IsTouching = true;
-							offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (screenPoint.x, touch.position.y, screenPoint.z));
-						//	Debug.DrawRay(Camera.main.ScreenToWorldPoint (new Vector3(touch.position.x,touch.position.y,10f)), transform.position-Camera.main.transform.position, Color.red, 100, true);
-							lm.CurrentPlatform = gameObject;
+							offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint (new Vector3 (screenPoint.x, Input.mousePosition.y, screenPoint.z));
 						}
 					}
-				} else if (touch.phase == TouchPhase.Moved && lm.CurrentPlatform == gameObject) {
+				} else if (touch.phase == TouchPhase.Moved) {
 					if (!PlayerOnThisPlatform () && IsTouching) {
 						Vector3 curScreenPoint = new Vector3 (screenPoint.x, touch.position.y, screenPoint.z);
 						Vector3 curPosition = Camera.main.ScreenToWorldPoint (curScreenPoint) + offset;
@@ -46,7 +41,6 @@ public class PlatformDrag : MonoBehaviour {
 					}
 				} else if (touch.phase == TouchPhase.Ended) {
 					IsTouching = false;
-					lm.CurrentPlatform = null;
 				}
 			}
 		}

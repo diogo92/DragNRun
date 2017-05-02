@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33421601841488596}
   - component: {fileID: 23285137234617060}
   - component: {fileID: 65593597736182612}
+  - component: {fileID: 114569434662914226}
   m_Layer: 0
   m_Name: Barrel_Sealed_01 1
   m_TagString: Untagged
@@ -136,7 +137,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469053102179196}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 8.011479, y: 10.1854, z: 7.6193695}
@@ -155,3 +156,14 @@ MonoBehaviour:
   rotationSpeed: 80
   movementSpeed: 5
   heightError: 0.2
+--- !u!114 &114569434662914226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469053102179196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a713e2bc4b695ee47b1cd933f35f5e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

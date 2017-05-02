@@ -10,6 +10,8 @@ public class FallingObstacle : MonoBehaviour {
 
 	float currTime = 0f;
 
+	public Transform SpawnTransform;
+
 	public Vector3 OriginalPosition;
 	public Vector3 HeightedOriginalPosition;
 
@@ -31,13 +33,16 @@ public class FallingObstacle : MonoBehaviour {
 	}
 
 	void Update () {
-		currTime += Time.deltaTime;
-		if (currTime >= timeToReset) {
-			transform.localPosition = HeightedOriginalPosition;
-			currTime = 0;
-			rb.velocity = Vector3.zero;
-			rb.AddTorque(new Vector3(0,0,rotationSpeed));
+		if (transform.position.y <= SpawnTransform.position.y) {
+			currTime += Time.deltaTime;
+			if (currTime >= timeToReset) {
+				transform.localPosition = HeightedOriginalPosition;
+				currTime = 0;
+				rb.velocity = Vector3.zero;
+				rb.AddTorque(new Vector3(0,0,rotationSpeed));
+			}
 		}
+
 	}
 
 	void OnDisable(){

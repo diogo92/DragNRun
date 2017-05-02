@@ -10,6 +10,7 @@ TagManager:
   - GroundsParent
   - Water
   - MinimapCam
+  - SkyLimit
   layers:
   - Default
   - TransparentFX
