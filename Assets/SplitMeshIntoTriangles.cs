@@ -5,7 +5,7 @@ using System.Collections;
 
 public class SplitMeshIntoTriangles : MonoBehaviour
 {
-	public IEnumerator SplitMesh ()
+	public void SplitMesh ()
 	{
 		
 		MeshFilter MF = GetComponent<MeshFilter>();
@@ -17,7 +17,7 @@ public class SplitMeshIntoTriangles : MonoBehaviour
 		for (int submesh = 0; submesh < M.subMeshCount; submesh++)
 		{
 			int[] indices = M.GetTriangles(submesh);
-			for (int i = 0; i < indices.Length; i += 3)
+			for (int i = 0; i < indices.Length/10; i += 3)
 			{
 				Vector3[] newVerts = new Vector3[3];
 				Vector3[] newNormals = new Vector3[3];
@@ -37,20 +37,25 @@ public class SplitMeshIntoTriangles : MonoBehaviour
 				mesh.triangles = new int[] { 0, 1, 2, 2, 1, 0 };
 
 				GameObject GO = new GameObject("Triangle " + (i / 3));
+				GO.layer = 11;
 				GO.transform.position = transform.position;
 				GO.transform.rotation = transform.rotation;
 				GO.transform.localScale = transform.parent.localScale;
 				GO.AddComponent<MeshRenderer>().material = MR.materials[submesh];
 				GO.AddComponent<MeshFilter>().mesh = mesh;
 				GO.AddComponent<BoxCollider>();
-				GO.AddComponent<Rigidbody>().AddExplosionForce(100, transform.position, 30);
+				GO.AddComponent<Rigidbody> ();
 
-				Destroy(GO, 5 + Random.Range(0.0f, 5.0f));
+				Destroy(GO, 2.5f);
 			}
 		}
 		MR.enabled = false;
-		yield return new WaitForSeconds(3f);
-		MR.enabled = true;
-		transform.parent.gameObject.SetActive (false);
+		GetComponent<Collider> ().enabled = false;
+	}
+
+
+	void OnDisable(){
+		GetComponent<MeshRenderer>().enabled = true;
+		GetComponent<Collider> ().enabled = true;
 	}
 }

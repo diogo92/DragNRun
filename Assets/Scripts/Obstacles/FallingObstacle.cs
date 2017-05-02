@@ -49,4 +49,12 @@ public class FallingObstacle : MonoBehaviour {
 		transform.localPosition = OriginalPosition;
 		currTime = 0;
 	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.tag == "Player") {
+			//Destroy the obstacle
+			GetComponentInChildren<SplitMeshIntoTriangles>().SplitMesh();
+		}
+	}
 }

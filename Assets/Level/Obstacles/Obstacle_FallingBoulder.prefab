@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4165513484708348}
   - component: {fileID: 114082661376926914}
-  - component: {fileID: 135905419448623046}
   - component: {fileID: 54548999880182436}
   m_Layer: 0
   m_Name: Obstacle_FallingBoulder
@@ -39,6 +38,8 @@ GameObject:
   - component: {fileID: 4778009650687668}
   - component: {fileID: 33555424278580838}
   - component: {fileID: 23359289502637622}
+  - component: {fileID: 114512979763797316}
+  - component: {fileID: 135052902901802044}
   m_Layer: 0
   m_Name: Boulder_Stone_01 1
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176020912626274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.21847, y: -1.0281591, z: -44.53539}
+  m_LocalPosition: {x: -11.350176, y: -3.4504557, z: -72.695305}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4778009650687668}
@@ -144,15 +145,26 @@ MonoBehaviour:
   SpawnTransform: {fileID: 0}
   OriginalPosition: {x: 0, y: 0, z: 0}
   HeightedOriginalPosition: {x: 0, y: 0, z: 0}
---- !u!135 &135905419448623046
+--- !u!114 &114512979763797316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884439700066246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a713e2bc4b695ee47b1cd933f35f5e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135052902901802044
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1176020912626274}
+  m_GameObject: {fileID: 1884439700066246}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6.53
-  m_Center: {x: 0, y: 6.6, z: 0}
+  m_Radius: 13.72
+  m_Center: {x: 0, y: 13.11, z: 0}

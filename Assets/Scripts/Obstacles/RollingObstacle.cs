@@ -34,7 +34,7 @@ public class RollingObstacle : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Player") {
 			//Destroy the obstacle
-			StartCoroutine(GetComponentInChildren<SplitMeshIntoTriangles>().SplitMesh());
+			GetComponentInChildren<SplitMeshIntoTriangles>().SplitMesh();
 		}
 	}
 
