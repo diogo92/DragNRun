@@ -25,13 +25,14 @@ public class GroundSpawner : MonoBehaviour {
 	public void SpawnGround(){
 		GameObject NextGround = pool.GetGround (AreaIndex);
 		float randY = 0;
+		NextGround.transform.localScale = Vector3.one;
 		if(!starting)
 			randY = Random.Range (-3f, 3f);
 		NextGround.transform.position = NextTransform.position + new Vector3 (0, randY, 0);
 		Vector3 ClampedPos = new Vector3 (NextGround.transform.position.x, Mathf.Clamp (NextGround.transform.position.y, -10, 10), NextGround.transform.position.z);
 		NextGround.transform.position = ClampedPos;
 		NextGround.transform.rotation = NextTransform.rotation;
-		float randScale = Random.Range (1f, 2f);
+		float randScale = Random.Range (1f, 1.5f);
 		NextGround.transform.localScale *= randScale;
 		NextGround.SetActive (true);
 		if (NextGround.GetComponent<ObjectSpawn> ()) {
