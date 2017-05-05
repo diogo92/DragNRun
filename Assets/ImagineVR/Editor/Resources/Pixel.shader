@@ -1,11 +1,13 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Pixelate" {
-    Properties {
+Shader "Custom\Pixelate" 
+{
+    Properties 
+    {
         _CellSize ("Cell Size", Vector) = (0.02, 0.02, 0, 0)
     }
     SubShader {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Opaque" "Queue" = "Transparent" }
         LOD 200
        
         GrabPass { "_PixelationGrabTexture"}
@@ -32,7 +34,8 @@ Shader "Pixelate" {
            
                 sampler2D _PixelationGrabTexture;
            
-                float4 frag(v2f IN) : COLOR {
+                float4 frag(v2f IN) : COLOR 
+                {
                     float2 steppedUV = IN.grabUV.xy/IN.grabUV.w;
                     steppedUV /= _CellSize.xy;
                     steppedUV = round(steppedUV);

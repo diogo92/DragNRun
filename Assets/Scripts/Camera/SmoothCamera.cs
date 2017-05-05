@@ -29,7 +29,7 @@ public class SmoothCamera : MonoBehaviour
         }
 		if (WaterPlane != null) {
 			WaterPlane.position = new Vector3 (-22, -10, transform.position.z);
-			WaterPlane.gameObject.GetComponent<MeshRenderer> ().material.mainTextureOffset += new Vector2 (0.1f*Time.deltaTime, 0.13f*Time.deltaTime);
+			WaterPlane.gameObject.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset += new Vector2 (0.1f*Time.deltaTime, 0.13f*Time.deltaTime);
 		}
 		if (SkyLimit != null) {
 			SkyLimit.position = new Vector3 (-22, 10, transform.position.z);
