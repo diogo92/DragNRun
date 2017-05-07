@@ -48,7 +48,9 @@ public class PlayerManager : MonoBehaviour {
 	 */
 	public int NumCoins = 0;
 
-
+	void Awake(){
+		Item.PM = this;
+	}
 	// Use this for initialization
 	void Start () {
 		DistanceRun = 0f;
@@ -73,7 +75,13 @@ public class PlayerManager : MonoBehaviour {
 			else
 				IsInvincible = false;
 		}
-
+		if (PowerupTimeLeft > 0) {
+			PowerupTimeLeft -= Time.deltaTime;
+		} else {
+			if (CurrentHeldPowerup == Item.ItemType.Powerup_Magnet) {
+				CurrentHeldPowerup = Item.ItemType.Empty;
+			}
+		}
 		//Calculate distance run
 		DistanceRun += Mathf.Abs(CurrentActivePlayer.transform.position.z - lastZPosition);
 		lastZPosition = CurrentActivePlayer.transform.position.z;

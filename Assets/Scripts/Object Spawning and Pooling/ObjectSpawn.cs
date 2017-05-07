@@ -41,19 +41,18 @@ public class ObjectSpawn : MonoBehaviour {
 	public void SpawnObject() {
 		SpawnedObjects = new List<GameObject> ();
 		//Randomly decide what to spawn
-		int rand = 0;//Random.Range(0,3);
-		switch (rand) {
-		case 0:
-			SpawnObstacle ();
-			break;
-		case 1:
+		//35% chance of not spawning obstacles or powerups
+		if (Random.value > 0.35f) {
+			//40% chance of spawning a powerup and 60% chance of spawning an obstacle
+			if (Random.value > 0.4f) {
+				SpawnObstacle ();
+			} else {
+				SpawnPowerup ();
+			}
+		}
+		//50% chance of spawning coins
+		if (Random.value > 0.5f) {
 			SpawnCollectable ();
-			break;
-		case 2:
-			SpawnPowerup ();
-			break;
-		default:
-			break;
 		}
 	}
 
@@ -71,13 +70,27 @@ public class ObjectSpawn : MonoBehaviour {
 		SpawnedObjects.Add (NewObstacle);
 
 	}
-	//Spawn a collectable
+	//Spawn a collectable (coins, etc)
 	void SpawnCollectable(){
-
+		GameObject NewCoin = pool.GetCoin ();
+		foreach(Transform coinChild in NewCoin.transform){
+			coinChild.gameObject.SetActive (true);
+		}
+		int randPos = Random.Range (0, objectSpawnTransforms.Length-1);
+		NewCoin.transform.position = objectSpawnTransforms[randPos].position;
+		NewCoin.transform.position += new Vector3 (0, 0.5f, 0);
+		NewCoin.transform.eulerAngles = objectSpawnTransforms [randPos].eulerAngles;
+		NewCoin.SetActive (true);
+		SpawnedObjects.Add (NewCoin);
 	}
 	//Spawn a powerup
 	void SpawnPowerup(){
-
+		GameObject NewPowerup = pool.GetPickable ();
+		int randPos = Random.Range (0, objectSpawnTransforms.Length-1);
+		NewPowerup.transform.position = objectSpawnTransforms[randPos].position;
+		NewPowerup.transform.position += new Vector3 (0, 0.5f, 0);
+		NewPowerup.SetActive (true);
+		SpawnedObjects.Add (NewPowerup);
 	}
 
 	void OnDisable(){

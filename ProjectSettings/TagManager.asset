@@ -5,12 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - AttachPoint
-  - CollectablesParent
   - ObstaclesParent
   - GroundsParent
   - Water
   - MinimapCam
   - SkyLimit
+  - Pickable
+  - PickablesParent
   layers:
   - Default
   - TransparentFX

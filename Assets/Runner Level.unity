@@ -1553,7 +1553,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012464943430, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000010237739742, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 2}
       propertyPath: m_IsActive
@@ -4143,8 +4143,8 @@ GameObject:
   m_Component:
   - component: {fileID: 886324815}
   m_Layer: 0
-  m_Name: CollectablesParent
-  m_TagString: CollectablesParent
+  m_Name: Pickables
+  m_TagString: PickablesParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6415,7 +6415,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numGrounds: 20
   numObstacles: 20
-  numCollectables: 100
+  numPickables: 20
+  numCoins: 1000
+  PickablesPrefabs:
+  - {fileID: 1064219512813790, guid: 3192fc0ac1ad564469c90e9415e83fdd, type: 2}
+  - {fileID: 1086719862290380, guid: 668578e6038f6b14e8099300d8082f52, type: 2}
+  - {fileID: 1103468902760524, guid: dc3d62f8b32c61a478b6efbf3ee60ba5, type: 2}
+  - {fileID: 1214608958690938, guid: b9e3019d2d2674a408ac9d9ba8c794ea, type: 2}
+  CoinPrefabs:
+  - {fileID: 1678156221492128, guid: 4389bf55c7cf60a46a47a58c8d18da96, type: 2}
+  - {fileID: 1045332162659848, guid: 10bf3b4fc20ee174cbe21bdd1c330f00, type: 2}
+  - {fileID: 1986087145630366, guid: 598396beba7a5ac4d86595bc1fe9315a, type: 2}
+  - {fileID: 1811408762350144, guid: d64eacc701e79d742b09a6d494a12d28, type: 2}
+  - {fileID: 1070597908401706, guid: 9f4214083067ebd44b7b76347db894bd, type: 2}
   GreenZoneGroundPrefabs:
   - {fileID: 1248522256756582, guid: 9aa3e318571ba7f49aa63c2abb81e4f5, type: 2}
   - {fileID: 1767420486650540, guid: 515908c3eae57a6469a935764ca7ce2c, type: 2}
@@ -6424,7 +6436,6 @@ MonoBehaviour:
   - {fileID: 1685798774503314, guid: 0ed30a6e25660dd49989924c897b3725, type: 2}
   GreenZoneObstaclePrefabs:
   - {fileID: 1176020912626274, guid: e78154d1791a7c249ad5b972050b0315, type: 2}
-  GreenZoneCollectablePrefabs: []
 --- !u!4 &1480217471
 Transform:
   m_ObjectHideFlags: 0

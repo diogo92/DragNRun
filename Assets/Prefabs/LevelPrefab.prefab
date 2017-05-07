@@ -2964,7 +2964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numGrounds: 15
   numObstacles: 30
-  numCollectables: 100
+  numPickables: 20
+  PickablesPrefabs: []
   GreenZoneGroundPrefabs:
   - {fileID: 1244486839383718, guid: 313889cba98591f47a40bbbf994df05b, type: 2}
   - {fileID: 1698451088389866, guid: e2b9e5b2a90b2a546918801d758c67b1, type: 2}
@@ -2973,7 +2974,6 @@ MonoBehaviour:
   - {fileID: 1453048630630038, guid: b7b7699e8e938b140aacd74a28d05f43, type: 2}
   - {fileID: 1138740639761044, guid: a3a9474b91786f74d9ec57406d022437, type: 2}
   - {fileID: 1202284424582360, guid: c50f01ec6f652d74a8ec9eb57e720011, type: 2}
-  GreenZoneCollectablePrefabs: []
 --- !u!114 &114226173169003650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2986,6 +2986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlatformDragSpeed: 3
+  CurrentPlatform: {fileID: 0}
 --- !u!114 &114257047786954684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3052,6 +3053,8 @@ MonoBehaviour:
   smooth: 0
   smoothSpeed: 0.125
   offset: {x: -15, y: 5, z: 0}
+  WaterPlane: {fileID: 0}
+  SkyLimit: {fileID: 0}
 --- !u!124 &124251236014636074
 Behaviour:
   m_ObjectHideFlags: 1
