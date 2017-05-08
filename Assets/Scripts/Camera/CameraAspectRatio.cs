@@ -6,6 +6,7 @@ public class CameraAspectRatio : MonoBehaviour {
 	public float AspectWidth = 9.0f;
 	public float AspectHeight = 16.0f;
 	void Start () {
+		Application.targetFrameRate = 60;
 		Screen.SetResolution (Screen.width, Screen.height, true);
 		float targetaspect = AspectWidth / AspectHeight;
 		float windowaspect = (float)Screen.width / (float)Screen.height;

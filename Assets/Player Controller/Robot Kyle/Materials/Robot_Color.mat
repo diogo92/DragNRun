@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Robot_Color
-  m_Shader: {fileID: 4800000, guid: 9ce107479d11178d11005b9844295342, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 7ffdd7b3bdd4ec54fbfa139e1f55274c, type: 3}
+  m_ShaderKeywords: _LIGHTMODE_DEFAULT _USE_M_TEX _USE_RIM
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
@@ -18,11 +18,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 94c473c9137744d7eabd829f1150da8d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2034f6656393e9a4a811b48a45f12ddc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MatCap:
+        m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ToonShade:
@@ -30,8 +38,29 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Brightness: 1.54
+    - _Bumpiness: 1
+    - _CullMode: 2
+    - _LThreshold: 0.6
+    - _LightLevelsDiffuse: 3
+    - _LightLevelsSpecular: 3
+    - _LightMode: 0
+    - _MatCapAccurate: 0
     - _Outline: 0.005
+    - _OutlineSize: 0.03
+    - _RimSize: 3
+    - _Shininess: 20
+    - _Smoothness: 0.01
+    - _ToonyFy: 1
+    - _UseCustomShadow: 0
+    - _UseMTex: 1
+    - _UseNormalMap: 0
+    - _UseRim: 1
+    - _UseSpecular: 0
     m_Colors:
     - _CellSize: {r: 0.02, g: 0.02, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.26, g: 0.19, b: 0.16, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 0.37}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

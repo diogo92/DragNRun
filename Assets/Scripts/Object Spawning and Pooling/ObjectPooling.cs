@@ -67,11 +67,17 @@ public class ObjectPooling : MonoBehaviour {
 			PickablesList.Add (obj);
 			currIndex++;
 		}
+		currIndex = 0;
 		for (int i = 0; i < numCoins; i++) {
-			GameObject obj = Instantiate (CoinPrefabs [0]) as GameObject;
+			if (CoinPrefabs.Length <= 0)
+				break;
+			if (currIndex >= CoinPrefabs.Length)
+				currIndex = 0;
+			GameObject obj = Instantiate (CoinPrefabs [currIndex]) as GameObject;
 			obj.transform.SetParent(GameObject.FindGameObjectWithTag("PickablesParent").transform);
 			obj.gameObject.SetActive (false);
 			CoinList.Add (obj);
+			currIndex++;
 		}
 	}
 

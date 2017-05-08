@@ -24,13 +24,16 @@ public class PlayerHUDManager : MonoBehaviour {
 	public Text NumCoinsText;
 
 	//The UI Text element that represents the current time left of the powerup effect
-	public Text PowerupTimeLeft;
+	public Text MagnetTimeLeft;
+
+	//The UI Text element that represents the current number of shields
+	public Text NumShields;
+
+	//The UI Text element that represents the current number of bolts
+	public Text NumBolts;
 
 	//The UI Image element that represents the current player hit points
 	public Image HPImage;
-
-	//The UI Image element that represents the current active powerup
-	public Image PowerupImage;
 
 
 	// Use this for initialization
@@ -42,33 +45,11 @@ public class PlayerHUDManager : MonoBehaviour {
 	void Update () {
 		DistanceRunText.text = Mathf.RoundToInt(PM.DistanceRun).ToString() + " m";
 		NumCoinsText.text = "x"+PM.NumCoins.ToString();
-		if (PM.CurrentHeldPowerup != Item.ItemType.Empty) {
-			PowerupTimeLeft.text = Mathf.RoundToInt (PM.PowerupTimeLeft).ToString () + "s";
-		} else
-			PowerupTimeLeft.text = "";
+		NumBolts.text = "x"+PM.NumBolts.ToString();
+		NumShields.text = "x"+PM.NumShields.ToString();
+		MagnetTimeLeft.text = Mathf.RoundToInt (PM.MagnetTimeLeft).ToString () + "s";
 	}
 
-	public void SetSprite(Item.ItemType type){
-		Color n = PowerupImage.color;
-		n.a =255f;
-		PowerupImage.color=n;
-		switch (type) {
-		case Item.ItemType.Powerup_Shield:
-			PowerupImage.sprite = powerupSprites [0];
-			break;
-		case Item.ItemType.Powerup_Magnet:
-			PowerupImage.sprite = powerupSprites [1];
-			break;
-		case Item.ItemType.Powerup_Lightning:
-			PowerupImage.sprite = powerupSprites [2];
-			break;
-		default:
-			n = PowerupImage.color;
-			n.a = 0f;
-			PowerupImage.color=n;
-			break;
-		}
-	}
 
 	public void IncreaseHP(){
 		HPImage.fillAmount += (1 / 3);

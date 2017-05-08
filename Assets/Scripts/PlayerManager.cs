@@ -31,11 +31,13 @@ public class PlayerManager : MonoBehaviour {
 
 
 	/*
-	 * 	Currently held Powerup
+	 * 	Powerups
 	 */
-	public float PowerupTimeLeft = 0f;
-	public Item.ItemType CurrentHeldPowerup;
-
+	public bool IsMagnetActive = false;
+	public float MagnetTimeLeft = 0f;
+	public int NumShields = 0;
+	public int NumBolts = 0;
+	public GameObject[] shieldEffects;
 	/*
 	 * 	Distance score calculation variables
 	 */
@@ -50,12 +52,6 @@ public class PlayerManager : MonoBehaviour {
 
 	void Awake(){
 		Item.PM = this;
-	}
-	// Use this for initialization
-	void Start () {
-		DistanceRun = 0f;
-		HUD = FindObjectOfType<PlayerHUDManager> ();
-		//Set the first active child as active player
 		foreach (Transform child in transform) {
 			if (child.gameObject.tag == "Player") {
 				if (child.gameObject.activeInHierarchy) {
@@ -64,6 +60,31 @@ public class PlayerManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+	// Use this for initialization
+	void Start () {
+		/** Get the child of the player with the shield effect transform **/
+		shieldEffects = new GameObject[2];
+		GameObject ShieldEffectParent = null;
+		foreach (Transform child in CurrentActivePlayer.transform) {
+			if (child.gameObject.tag == "ShieldParent") {
+				ShieldEffectParent = child.gameObject;
+				break;
+			}
+		}
+		if (ShieldEffectParent) {
+			int currInd = 0;
+			foreach (Transform child in ShieldEffectParent.transform) {
+				shieldEffects [currInd] = child.gameObject;
+				currInd++;
+				if (currInd > 1)
+					break;
+			}
+		}
+		DistanceRun = 0f;
+		HUD = FindObjectOfType<PlayerHUDManager> ();
+		//Set the first active child as active player
+
 		lastZPosition = CurrentActivePlayer.transform.position.z;
 	}
 	
@@ -75,12 +96,11 @@ public class PlayerManager : MonoBehaviour {
 			else
 				IsInvincible = false;
 		}
-		if (PowerupTimeLeft > 0) {
-			PowerupTimeLeft -= Time.deltaTime;
+		if (MagnetTimeLeft > 0) {
+			MagnetTimeLeft -= Time.deltaTime;
 		} else {
-			if (CurrentHeldPowerup == Item.ItemType.Powerup_Magnet) {
-				CurrentHeldPowerup = Item.ItemType.Empty;
-			}
+			IsMagnetActive = false;
+			MagnetTimeLeft = 0;
 		}
 		//Calculate distance run
 		DistanceRun += Mathf.Abs(CurrentActivePlayer.transform.position.z - lastZPosition);
@@ -91,9 +111,15 @@ public class PlayerManager : MonoBehaviour {
 	public void HitByObstacle(){
 		if (IsInvincible)
 			return;
-		else if (CurrentHeldPowerup == Item.ItemType.Powerup_Shield) {
-			SetPowerup (Item.ItemType.Empty);
+		else if (NumShields>0) {
 			IsInvincible = true;
+			NumShields--;
+			if (shieldEffects [0].activeInHierarchy) {
+				if (shieldEffects [1].activeInHierarchy)
+					shieldEffects [1].SetActive (false);
+				else
+					shieldEffects [0].SetActive (false);
+			}
 			InvincibleTimeLeft = 2f;
 		}
 		else {
@@ -103,21 +129,26 @@ public class PlayerManager : MonoBehaviour {
 		}
 	}
 	// Sets new powerup or object effect, if collecting or timer/effect running out
-	public void SetPowerup(Item.ItemType iType){
+	public void AddPowerUp(Item.ItemType iType){
 		switch (iType) {
 		case Item.ItemType.Powerup_Shield:
-			CurrentHeldPowerup = iType;
-			HUD.SetSprite (iType);
+			if (NumShields < 2) {
+				if (shieldEffects [0].activeInHierarchy) {
+					if (!shieldEffects [1].activeInHierarchy)
+						shieldEffects [1].SetActive (true);
+				}
+				else
+					shieldEffects [0].SetActive (true);
+				NumShields++;
+			}
 			break;
 		case Item.ItemType.Powerup_Magnet:
-			PowerupTimeLeft = Item.MagnetTimer;
-			CurrentHeldPowerup = iType;
-			HUD.SetSprite (iType);
+			MagnetTimeLeft = Item.MagnetTimer;
+			IsMagnetActive = true;
 			break;
 		case Item.ItemType.Powerup_Lightning:
-			PowerupTimeLeft = Item.LightningboltTimer;
-			CurrentHeldPowerup = iType;
-			HUD.SetSprite (iType);
+			if(NumBolts<3)
+			NumBolts++;
 			break;
 		case Item.ItemType.Coin:
 			NumCoins++;
@@ -126,12 +157,8 @@ public class PlayerManager : MonoBehaviour {
 			IncreaseHP ();
 			break;
 		case Item.ItemType.Empty:
-			CurrentHeldPowerup = iType;
-			HUD.SetSprite (iType);
 			break;
 		default:
-			CurrentHeldPowerup = iType;
-			HUD.SetSprite (iType);
 			break;
 		}
 	}

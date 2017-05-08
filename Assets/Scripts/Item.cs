@@ -6,7 +6,6 @@ public class Item : MonoBehaviour {
 
 	public static PlayerManager PM;
 	public static float MagnetTimer = 10f;
-	public static float LightningboltTimer = 5f;
 	public enum ItemType{
 		Powerup_Shield,
 		Powerup_Lightning,
@@ -33,13 +32,13 @@ public class Item : MonoBehaviour {
 				PM.IncreaseHP ();
 				break;
 			case ItemType.Powerup_Lightning:
-				PM.SetPowerup (type);
+				PM.AddPowerUp (type);
 				break;
 			case ItemType.Powerup_Magnet:
-				PM.SetPowerup (type);
+				PM.AddPowerUp (type);
 				break;
 			case ItemType.Powerup_Shield:
-				PM.SetPowerup (type);
+				PM.AddPowerUp (type);
 				break;
 			default:
 				break;

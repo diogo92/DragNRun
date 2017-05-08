@@ -12,6 +12,7 @@ TagManager:
   - SkyLimit
   - Pickable
   - PickablesParent
+  - ShieldParent
   layers:
   - Default
   - TransparentFX

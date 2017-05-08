@@ -261,6 +261,7 @@ namespace Invector.CharacterController
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(euler), freeRotationSpeed * Time.deltaTime);
                 }
             }
+			transform.position = new Vector3 (0, transform.position.y, transform.position.z);
         }
 
         protected void ControlSpeed(float velocity)
