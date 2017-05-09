@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114646068177026812}
   m_Layer: 0
   m_Name: HeartPickable
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114646068177026812
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class Item : MonoBehaviour {
 
 	public static PlayerManager PM;
 	public static float MagnetTimer = 10f;
+	public static float MagnetRadius = 5f;
 	public enum ItemType{
 		Powerup_Shield,
 		Powerup_Lightning,
@@ -16,11 +17,6 @@ public class Item : MonoBehaviour {
 	}
 
 	public ItemType type;
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Player") {

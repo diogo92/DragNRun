@@ -3060,6 +3060,7 @@ Transform:
   - {fileID: 1658499489}
   - {fileID: 820547608}
   - {fileID: 1075457239}
+  - {fileID: 1712736142}
   m_Father: {fileID: 2048812628}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3091,7 +3092,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 114
   m_CollisionDetection: 1
 --- !u!114 &790174226
 MonoBehaviour:
@@ -5903,7 +5904,9 @@ MonoBehaviour:
   - {fileID: 1752349997676218, guid: da7ad82bf8984f64ca8d309a74c41a4b, type: 2}
   - {fileID: 1685798774503314, guid: 0ed30a6e25660dd49989924c897b3725, type: 2}
   GreenZoneObstaclePrefabs:
+  - {fileID: 1951765431100246, guid: 24581f421bf78a040ba05a1dddcc405d, type: 2}
   - {fileID: 1176020912626274, guid: e78154d1791a7c249ad5b972050b0315, type: 2}
+  - {fileID: 1474083943881564, guid: 8f7b9d99bca620946b04c2bf25e4a781, type: 2}
 --- !u!4 &1480217471
 Transform:
   m_ObjectHideFlags: 0
@@ -6979,6 +6982,59 @@ MonoBehaviour:
   rotationDegree: 360
   RotateAroundPlayer: 0
   target: {fileID: 0}
+--- !u!1 &1712736141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1712736142}
+  - component: {fileID: 1712736143}
+  - component: {fileID: 1712736144}
+  m_Layer: 8
+  m_Name: MagnetArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712736142
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712736141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 790174223}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1712736143
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712736141}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1712736144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1712736141}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7dec9f5c55029e4ea44b992feced1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726722979
 GameObject:
   m_ObjectHideFlags: 0

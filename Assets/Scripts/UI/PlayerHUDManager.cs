@@ -52,9 +52,9 @@ public class PlayerHUDManager : MonoBehaviour {
 
 
 	public void IncreaseHP(){
-		HPImage.fillAmount += (1 / 3);
+		HPImage.fillAmount += (1f / 3f);
 	}
 	public void DecreaseHP(){
-		HPImage.fillAmount -= (1 / 3);
+		HPImage.fillAmount -= (1f / 3f);
 	}
 }

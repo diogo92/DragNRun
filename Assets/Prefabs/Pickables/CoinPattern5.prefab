@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114309948431481146}
   m_Layer: 0
   m_Name: CoinPickable (6)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 114507404685307352}
   m_Layer: 0
   m_Name: CoinPickable (1)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 114869391375585926}
   m_Layer: 0
   m_Name: CoinPickable (14)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 114960223476953050}
   m_Layer: 0
   m_Name: CoinPickable (8)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 114352037697868690}
   m_Layer: 0
   m_Name: CoinPickable (5)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 114052221147781152}
   m_Layer: 0
   m_Name: CoinPickable (12)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 114932457527476890}
   m_Layer: 0
   m_Name: CoinPickable (11)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 114629762742653624}
   m_Layer: 0
   m_Name: CoinPickable (10)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 114512391747729546}
   m_Layer: 0
   m_Name: CoinPickable (7)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 114148934817448434}
   m_Layer: 0
   m_Name: CoinPickable (13)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 114591427745701334}
   m_Layer: 0
   m_Name: CoinPickable (2)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 114901321343248882}
   m_Layer: 0
   m_Name: CoinPickable (3)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 114900534580550020}
   m_Layer: 0
   m_Name: CoinPickable (9)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 114422561549074408}
   m_Layer: 0
   m_Name: CoinPickable
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 114227564455687816}
   m_Layer: 0
   m_Name: CoinPickable (4)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1158,6 +1158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114101019324357570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1170,6 +1172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114104369469903898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1182,6 +1186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114148934817448434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1206,6 +1212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114227564455687816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1230,6 +1238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114309948431481146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1266,6 +1276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114422561549074408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1290,6 +1302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114439642574018520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1302,6 +1316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114447170843663088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1314,6 +1330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114475505810812560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,6 +1344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114507404685307352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1386,6 +1406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114730347535398736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1398,6 +1420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114859501749122690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1410,6 +1434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114869391375585926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1458,6 +1484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114913290722710634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1470,6 +1498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114932457527476890
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114765141211766694}
   m_Layer: 0
   m_Name: CoinPickable (1)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 114239959858872838}
   m_Layer: 0
   m_Name: CoinPickable (3)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 114229655781646326}
   m_Layer: 0
   m_Name: CoinPickable (4)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 114212873357850792}
   m_Layer: 0
   m_Name: CoinPickable (2)
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 114701508616763004}
   m_Layer: 0
   m_Name: CoinPickable
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,6 +416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114212873357850792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,6 +442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114229655781646326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,6 +480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114694926700475960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,6 +494,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!114 &114701508616763004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,6 +532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDegree: 300
+  RotateAroundPlayer: 0
+  target: {fileID: 0}
 --- !u!135 &135172424254301640
 SphereCollider:
   m_ObjectHideFlags: 1

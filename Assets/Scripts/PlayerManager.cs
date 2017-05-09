@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour {
 	/*
 	 *	Active player controller
 	 */ 
-	GameObject CurrentActivePlayer;
+	public static GameObject CurrentActivePlayer;
 
 
 	/*
@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour {
 	/*
 	 * 	Powerups
 	 */
+	GameObject MagnetEffect;
 	public bool IsMagnetActive = false;
 	public float MagnetTimeLeft = 0f;
 	public int NumShields = 0;
@@ -60,6 +61,8 @@ public class PlayerManager : MonoBehaviour {
 				}
 			}
 		}
+		MagnetEffect = CurrentActivePlayer.GetComponentInChildren<MagnetEffect> ().gameObject;
+		MagnetEffect.SetActive(false);
 	}
 	// Use this for initialization
 	void Start () {
@@ -101,6 +104,7 @@ public class PlayerManager : MonoBehaviour {
 		} else {
 			IsMagnetActive = false;
 			MagnetTimeLeft = 0;
+			MagnetEffect.SetActive(false);
 		}
 		//Calculate distance run
 		DistanceRun += Mathf.Abs(CurrentActivePlayer.transform.position.z - lastZPosition);
@@ -144,6 +148,7 @@ public class PlayerManager : MonoBehaviour {
 			break;
 		case Item.ItemType.Powerup_Magnet:
 			MagnetTimeLeft = Item.MagnetTimer;
+			MagnetEffect.SetActive(true);
 			IsMagnetActive = true;
 			break;
 		case Item.ItemType.Powerup_Lightning:
