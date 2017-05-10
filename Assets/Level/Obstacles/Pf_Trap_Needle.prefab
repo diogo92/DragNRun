@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 33764046169774886}
   - component: {fileID: 23952102689751184}
   - component: {fileID: 65887173103388594}
+  - component: {fileID: 114081869217483554}
   m_Layer: 0
   m_Name: Needle
   m_TagString: Untagged
@@ -129,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474083943881564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.8010707, y: -6.47, z: -3.8398027}
+  m_LocalPosition: {x: 6.230514, y: -4.0517077, z: -5.3177404}
   m_LocalScale: {x: 1.2424264, y: 1.2424269, z: 1.2424269}
   m_Children:
   - {fileID: 4388519356545686}
@@ -290,11 +291,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666674469849434}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.52995527, y: 0.18, z: 0.5162337}
-  m_Center: {x: 0.0019949228, y: 0.16, z: -0.002992615}
+  m_Size: {x: 0.4, y: 0.1, z: 0.4}
+  m_Center: {x: 0.0019949188, y: 0.1184506, z: 0.0023330834}
 --- !u!111 &111442002092543140
 Animation:
   m_ObjectHideFlags: 1
@@ -322,5 +323,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aac72a04f142474468d6ef4db8db7e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114081869217483554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666674469849434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0caeb30498ee076429eaa069f9e2cb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

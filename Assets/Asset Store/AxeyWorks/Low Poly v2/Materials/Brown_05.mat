@@ -114,7 +114,7 @@ Material:
     - _DstBlend: 0
     - _EdgeLength: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0.492
+    - _Glossiness: 0
     - _GlossyReflections: 0
     - _LThreshold: 0.6
     - _LightLevelsDiffuse: 3

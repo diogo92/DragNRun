@@ -5904,8 +5904,6 @@ MonoBehaviour:
   - {fileID: 1752349997676218, guid: da7ad82bf8984f64ca8d309a74c41a4b, type: 2}
   - {fileID: 1685798774503314, guid: 0ed30a6e25660dd49989924c897b3725, type: 2}
   GreenZoneObstaclePrefabs:
-  - {fileID: 1951765431100246, guid: 24581f421bf78a040ba05a1dddcc405d, type: 2}
-  - {fileID: 1176020912626274, guid: e78154d1791a7c249ad5b972050b0315, type: 2}
   - {fileID: 1474083943881564, guid: 8f7b9d99bca620946b04c2bf25e4a781, type: 2}
 --- !u!4 &1480217471
 Transform:

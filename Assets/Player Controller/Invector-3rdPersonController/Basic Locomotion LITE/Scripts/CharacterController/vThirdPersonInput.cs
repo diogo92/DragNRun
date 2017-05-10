@@ -58,7 +58,7 @@ namespace Invector.CharacterController
         {
             if (cc == null) return;             // returns if didn't find the controller		    
             InputHandle();                      // update input methods
-            UpdateCameraStates();               // update camera states
+      //      UpdateCameraStates();               // update camera states
         }
 
         protected virtual void FixedUpdate()
