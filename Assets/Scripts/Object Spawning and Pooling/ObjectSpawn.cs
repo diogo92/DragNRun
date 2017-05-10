@@ -42,14 +42,14 @@ public class ObjectSpawn : MonoBehaviour {
 		SpawnedObjects = new List<GameObject> ();
 		//Randomly decide what to spawn
 		//35% chance of not spawning obstacles or powerups
-	//	if (Random.value > 0.35f) {
+		if (Random.value > 0.35f) {
 			//40% chance of spawning a powerup and 60% chance of spawning an obstacle
-		//	if (Random.value > 0.4f) {
+			if (Random.value > 0.4f) {
 				SpawnObstacle ();
-	//		} else {
-	//			SpawnPowerup ();
-	//		}
-	//	}
+			} else {
+				SpawnPowerup ();
+			}
+		}
 		//50% chance of spawning coins
 		if (Random.value > 0.5f) {
 			SpawnCollectable ();

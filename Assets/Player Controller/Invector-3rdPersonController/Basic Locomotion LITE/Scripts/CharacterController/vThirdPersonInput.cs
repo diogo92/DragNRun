@@ -36,6 +36,7 @@ namespace Invector.CharacterController
 
         #endregion
 
+
         protected virtual void Start()
         {
             CharacterInit();

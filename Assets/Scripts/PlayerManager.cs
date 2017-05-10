@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 /*
  * 	Player Manager Script
  */
@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour {
 	 *	Active player controller
 	 */ 
 	public static GameObject CurrentActivePlayer;
-
+	SkinnedMeshRenderer[] ModelMeshes;
 
 	/*
 	 * 	Player hit points
@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour {
 	public int HP = 3;
 	//Can take damage
 	bool IsInvincible = false;
+	bool IsBlinking = false;
 	//Invincibility timer
 	public float InvincibleTimeLeft = 0f;
 
@@ -66,6 +67,7 @@ public class PlayerManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		ModelMeshes = CurrentActivePlayer.GetComponentsInChildren<SkinnedMeshRenderer> ();
 		/** Get the child of the player with the shield effect transform **/
 		shieldEffects = new GameObject[2];
 		GameObject ShieldEffectParent = null;
@@ -94,6 +96,8 @@ public class PlayerManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (IsInvincible) {
+			if (!IsBlinking)
+				StartCoroutine (Blink());
 			if (InvincibleTimeLeft > 0)
 				InvincibleTimeLeft -= Time.deltaTime;
 			else
@@ -107,8 +111,13 @@ public class PlayerManager : MonoBehaviour {
 			MagnetEffect.SetActive(false);
 		}
 		//Calculate distance run
+
 		DistanceRun += Mathf.Abs(CurrentActivePlayer.transform.position.z - lastZPosition);
 		lastZPosition = CurrentActivePlayer.transform.position.z;
+
+		//Check if below level limit
+		if(CurrentActivePlayer.transform.position.y < -20f || HP <=0)
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
 	// Function called by child collider when hitting an obstacle
@@ -127,9 +136,13 @@ public class PlayerManager : MonoBehaviour {
 			InvincibleTimeLeft = 2f;
 		}
 		else {
+			if (CurrentActivePlayer.GetComponentInChildren<Rigidbody> ()) {
+				CurrentActivePlayer.GetComponentInChildren<Rigidbody> ().velocity = Vector3.zero;
+				CurrentActivePlayer.GetComponentInChildren<Rigidbody> ().AddForce (0, 2f, 30f, ForceMode.VelocityChange);
+			}
 			DecreaseHP ();
 			IsInvincible = true;
-			InvincibleTimeLeft = 10f;
+			InvincibleTimeLeft = 3f;
 		}
 	}
 	// Sets new powerup or object effect, if collecting or timer/effect running out
@@ -184,5 +197,19 @@ public class PlayerManager : MonoBehaviour {
 		}
 	}
 
+
+	IEnumerator Blink(){
+		IsBlinking = true;
+		for (int i = 0; i < ModelMeshes.Length; i++) {
+			ModelMeshes [i].enabled = false;
+		}
+		yield return new WaitForSeconds (0.3f);
+		for (int i = 0; i < ModelMeshes.Length; i++) {
+			ModelMeshes [i].enabled = true;
+		}
+		yield return new WaitForSeconds (0.3f);
+		IsBlinking = false;
+
+	}
 
 }
