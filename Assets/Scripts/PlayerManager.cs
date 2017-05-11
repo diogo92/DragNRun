@@ -118,6 +118,7 @@ public class PlayerManager : MonoBehaviour {
 		//Check if below level limit
 		if(CurrentActivePlayer.transform.position.y < -20f || HP <=0)
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	
 	}
 
 	// Function called by child collider when hitting an obstacle
