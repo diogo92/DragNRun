@@ -24,25 +24,16 @@ public class ObjectPooling : MonoBehaviour {
 
 	//Prefabs to pool
 	//Green Zone specifics
-	public GameObject[] GreenZoneGroundPrefabs; 
-	public GameObject[] GreenZoneObstaclePrefabs;
-	List<GameObject> GreenZoneGroundList;
-	List<GameObject> GreenZoneObstacleList;
+	public GameObject[] GroundPrefabs; 
+	public GameObject[] ObstaclePrefabs;
+	List<GameObject> GroundList;
+	List<GameObject> ObstacleList;
 
 
 	public void Awake(){
 		PoolPickables ();
 	}
 
-	public void PoolObjectsForArea(int Area){
-		switch (Area) {
-		case 0:
-			PoolGreenZone ();
-			break;
-		default:
-			break;
-		}
-	}
 
 	void DeleteObjectsForArea(int Area){
 
@@ -82,35 +73,35 @@ public class ObjectPooling : MonoBehaviour {
 	}
 
 	/*
-	 * Green Zone Pooling list
+	 * Zone Pooling list
 	 */
-	void PoolGreenZone(){
-		GreenZoneGroundList = new List<GameObject> ();
-		GreenZoneObstacleList = new List<GameObject> ();
+	public void PoolObjects(){
+		GroundList = new List<GameObject> ();
+		ObstacleList = new List<GameObject> ();
 		int currIndex = 0;
 		//Straight grounds
 		for (int i = 0; i < numGrounds; i++) {
-			if (GreenZoneGroundPrefabs.Length <= 0)
+			if (GroundPrefabs.Length <= 0)
 				break;
-			if (currIndex >= GreenZoneGroundPrefabs.Length)
+			if (currIndex >= GroundPrefabs.Length)
 				currIndex = 0;
-			GameObject obj = Instantiate (GreenZoneGroundPrefabs [currIndex]) as GameObject;
+			GameObject obj = Instantiate (GroundPrefabs [currIndex]) as GameObject;
 			obj.transform.SetParent(GameObject.FindGameObjectWithTag("GroundsParent").transform);
 			obj.gameObject.SetActive (false);
-			GreenZoneGroundList.Add (obj);
+			GroundList.Add (obj);
 			currIndex++;
 		}
 		currIndex = 0;
 		//Obstacles
 		for (int i = 0; i < numObstacles; i++) {
-			if (GreenZoneObstaclePrefabs.Length <= 0)
+			if (ObstaclePrefabs.Length <= 0)
 				break;
-			if (currIndex >= GreenZoneObstaclePrefabs.Length)
+			if (currIndex >= ObstaclePrefabs.Length)
 				currIndex = 0;
-			GameObject obj = Instantiate (GreenZoneObstaclePrefabs [currIndex]) as GameObject;
+			GameObject obj = Instantiate (ObstaclePrefabs [currIndex]) as GameObject;
 			obj.transform.SetParent(GameObject.FindGameObjectWithTag("ObstaclesParent").transform);
 			obj.gameObject.SetActive (false);
-			GreenZoneObstacleList.Add (obj);
+			ObstacleList.Add (obj);
 			currIndex++;
 		}
 		currIndex = 0;
@@ -118,34 +109,21 @@ public class ObjectPooling : MonoBehaviour {
 
 
 	//Get Straight ground
-	public GameObject GetGround(int Area){
-		switch (Area) {
-		case 0:
-			int index = Random.Range (0, GreenZoneGroundList.Count - 1);
-			while (GreenZoneGroundList [index].gameObject.activeInHierarchy) {
-				index = Random.Range (0, GreenZoneGroundList.Count - 1);
-			}
-			return GreenZoneGroundList [index];
-		default:
-			break;
+	public GameObject GetGround(){
+		int index = Random.Range (0, GroundList.Count - 1);
+		while (GroundList [index].gameObject.activeInHierarchy) {
+			index = Random.Range (0, GroundList.Count - 1);
 		}
-		return null;
+		return GroundList [index];
 	}
 
 	//Get Obstacle
-	public GameObject GetObstacle(int Area){
-		switch (Area) {
-		case 0:
-			int index = Random.Range (0, GreenZoneObstacleList.Count - 1);
-			while (GreenZoneObstacleList [index].gameObject.activeInHierarchy) {
-				index = Random.Range (0, GreenZoneObstacleList.Count - 1);
-			}
-			return GreenZoneObstacleList [index];
-		default:
-			break;
+	public GameObject GetObstacle(){
+		int index = Random.Range (0, ObstacleList.Count - 1);
+		while (ObstacleList [index].gameObject.activeInHierarchy) {
+			index = Random.Range (0, ObstacleList.Count - 1);
 		}
-
-		return null;
+		return ObstacleList [index];
 	}
 
 	//Get Pickable

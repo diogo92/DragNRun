@@ -7,7 +7,7 @@ public class SpikeCollision : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.tag == "Player") {
-			GameObject.FindObjectOfType<PlayerManager>().HitByObstacle();
+			PlayerManager.Instance.HitByObstacle();
 		}
 	}
 }

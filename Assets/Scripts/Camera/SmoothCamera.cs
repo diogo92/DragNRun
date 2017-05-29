@@ -3,15 +3,21 @@ using System.Collections;
 
 public class SmoothCamera : MonoBehaviour
 {
+	public static SmoothCamera Instance { set; get; }
     public Transform lookAt;
 
     public bool smooth = true;
     public float smoothSpeed = 0.125f;
     public Vector3 offset = new Vector3(-5f, 1f, 0);
 
-	public Transform WaterPlane;
-	public Transform SkyLimit;
+	public Transform LimitsTransform;
 
+
+	void Awake(){
+		Debug.Log (tag);
+		if (tag=="MainCamera")
+			Instance = this;
+	}
 	void Start(){
 	}
     private void LateUpdate()
@@ -27,12 +33,9 @@ public class SmoothCamera : MonoBehaviour
         {
             transform.position = desiredPosition;
         }
-		if (WaterPlane != null) {
-			WaterPlane.position = new Vector3 (-22, -10, transform.position.z);
-			WaterPlane.gameObject.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset += new Vector2 (0.1f*Time.deltaTime, 0.13f*Time.deltaTime);
-		}
-		if (SkyLimit != null) {
-			SkyLimit.position = new Vector3 (-22, 10, transform.position.z);
+		if (LimitsTransform != null) {
+			LimitsTransform.position = new Vector3 (-22, -10, transform.position.z);
+			LimitsTransform.gameObject.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset += new Vector2 (0.1f*Time.deltaTime, 0.13f*Time.deltaTime);
 		}
     }
 }

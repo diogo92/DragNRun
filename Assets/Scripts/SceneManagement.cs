@@ -7,7 +7,18 @@ using UnityEngine.SceneManagement;
  * Based on N3K EN's tutorials
  */
 public class SceneManagement : MonoBehaviour {
+	
 
+
+	public enum LevelName
+	{
+		WaterfrontCliff,
+		Sector9Slums
+
+	}
+
+	public LevelName CurrentLevel;
+	public LevelName LevelToLoadFirst;
 	public static SceneManagement Instance{ set; get; }
 
 	public Image fadeImage;
@@ -18,9 +29,12 @@ public class SceneManagement : MonoBehaviour {
 
 	private void Awake(){
 		Instance = this;
-		Load ("WaterFrontCliff");
+		CurrentLevel = LevelToLoadFirst;
 	}
 
+	void Start(){
+		Load (LevelToLoadFirst);
+	}
 	public void Fade(bool showing, float duration){
 		isShowing = showing;
 		isInTransition = true;
@@ -40,15 +54,16 @@ public class SceneManagement : MonoBehaviour {
 		}
 	}
 
-	public void Load (string sceneName){
-		if (!SceneManager.GetSceneByName (sceneName).isLoaded) {
-			SceneManager.LoadScene (sceneName, LoadSceneMode.Additive);
+	public void Load (LevelName level){
+		if (!SceneManager.GetSceneByName (level.ToString()).isLoaded) {
+			SceneManager.LoadScene (level.ToString(), LoadSceneMode.Additive);
+			PlayerHUDManager.Instance.ChangeLevel (level);
 		}
 	}
 
-	public void Unload (string sceneName){
-		if (SceneManager.GetSceneByName (sceneName).isLoaded) {
-			SceneManager.UnloadSceneAsync(sceneName);
+	public void Unload (string level){
+		if (SceneManager.GetSceneByName (level).isLoaded) {
+			SceneManager.UnloadSceneAsync(level);
 		}
 	}
 }

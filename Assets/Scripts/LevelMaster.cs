@@ -7,13 +7,12 @@ public class LevelMaster : MonoBehaviour {
 	public float PlatformDragSpeed = 1f;
 	public GameObject CurrentPlatform = null;
 
-
+	public Transform Limits;
+	public Material SceneSkybox;
 	// Use this for initialization
 	void Start () {
-		
+		SmoothCamera.Instance.LimitsTransform = Limits;
+		RenderSettings.skybox = SceneSkybox;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
+
 }

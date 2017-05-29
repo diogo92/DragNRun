@@ -6,7 +6,6 @@ public class GroundSpawner : MonoBehaviour {
 
 	bool starting = true;
 	ObjectPooling pool;
-	public int AreaIndex = 0;
 	Transform NextTransform;
 	// Use this for initialization
 	void Start () {
@@ -14,7 +13,7 @@ public class GroundSpawner : MonoBehaviour {
 		NextTransform.position = Vector3.zero;
 		NextTransform.rotation = Quaternion.identity;
 		pool = GetComponent<ObjectPooling> ();
-		pool.PoolObjectsForArea (AreaIndex);
+		pool.PoolObjects ();
 		//Spawn 10 grounds at the start
 		for (int i = 0; i < 10; i++) {
 			SpawnGround ();
@@ -23,7 +22,7 @@ public class GroundSpawner : MonoBehaviour {
 	}
 
 	public void SpawnGround(){
-		GameObject NextGround = pool.GetGround (AreaIndex);
+		GameObject NextGround = pool.GetGround ();
 		float randY = 0;
 		NextGround.transform.localScale = Vector3.one;
 		if(!starting)

@@ -7,12 +7,12 @@ TagManager:
   - AttachPoint
   - ObstaclesParent
   - GroundsParent
-  - Water
   - MinimapCam
-  - SkyLimit
   - Pickable
   - PickablesParent
   - ShieldParent
+  - CollectablesParent
+  - Limits
   layers:
   - Default
   - TransparentFX
@@ -27,8 +27,8 @@ TagManager:
   - Minimap
   - MeshTriangles
   - TempCast
-  - 
-  - 
+  - UIElement
+  - Backgrounds
   - 
   - 
   - 

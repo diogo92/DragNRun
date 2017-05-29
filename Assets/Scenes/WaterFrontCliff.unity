@@ -125,7 +125,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4530153764483558, guid: f17f5d1648dfa3e45b698fe1e6dae953, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -11.39
+      value: -31.91
       objectReference: {fileID: 0}
     - target: {fileID: 4530153764483558, guid: f17f5d1648dfa3e45b698fe1e6dae953, type: 2}
       propertyPath: m_LocalRotation.x
@@ -526,6 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatformDragSpeed: 4
   CurrentPlatform: {fileID: 0}
+  Limits: {fileID: 763495521}
+  SceneSkybox: {fileID: 2100000, guid: e54f0bee216166c41a77ba61a0a8543b, type: 2}
 --- !u!114 &1480217469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be96ef5adc45be47ab678e77691c3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AreaIndex: 0
 --- !u!114 &1480217470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,19 +567,19 @@ MonoBehaviour:
   - {fileID: 1986087145630366, guid: 598396beba7a5ac4d86595bc1fe9315a, type: 2}
   - {fileID: 1811408762350144, guid: d64eacc701e79d742b09a6d494a12d28, type: 2}
   - {fileID: 1070597908401706, guid: 9f4214083067ebd44b7b76347db894bd, type: 2}
-  GreenZoneGroundPrefabs:
-  - {fileID: 1248522256756582, guid: 9aa3e318571ba7f49aa63c2abb81e4f5, type: 2}
-  - {fileID: 1767420486650540, guid: 515908c3eae57a6469a935764ca7ce2c, type: 2}
-  - {fileID: 1569591398298578, guid: 91838087b1e0467448dad48ea61467fd, type: 2}
-  - {fileID: 1752349997676218, guid: da7ad82bf8984f64ca8d309a74c41a4b, type: 2}
-  - {fileID: 1685798774503314, guid: 0ed30a6e25660dd49989924c897b3725, type: 2}
+  GroundPrefabs:
   - {fileID: 1482345375882882, guid: da31398de52c34644902dd68d60c4e93, type: 2}
   - {fileID: 1770203962408618, guid: a1cbf047a1ab27843a987e8f2a8d5cd1, type: 2}
   - {fileID: 1351517668400104, guid: 7d99d2cef209f5f43b9d176ba771154d, type: 2}
-  GreenZoneObstaclePrefabs:
-  - {fileID: 1474083943881564, guid: 8f7b9d99bca620946b04c2bf25e4a781, type: 2}
+  - {fileID: 1767420486650540, guid: 515908c3eae57a6469a935764ca7ce2c, type: 2}
+  - {fileID: 1752349997676218, guid: da7ad82bf8984f64ca8d309a74c41a4b, type: 2}
+  - {fileID: 1685798774503314, guid: 0ed30a6e25660dd49989924c897b3725, type: 2}
+  - {fileID: 1248522256756582, guid: 9aa3e318571ba7f49aa63c2abb81e4f5, type: 2}
+  - {fileID: 1569591398298578, guid: 91838087b1e0467448dad48ea61467fd, type: 2}
+  ObstaclePrefabs:
   - {fileID: 1951765431100246, guid: 24581f421bf78a040ba05a1dddcc405d, type: 2}
   - {fileID: 1176020912626274, guid: e78154d1791a7c249ad5b972050b0315, type: 2}
+  - {fileID: 1474083943881564, guid: 8f7b9d99bca620946b04c2bf25e4a781, type: 2}
 --- !u!4 &1480217471
 Transform:
   m_ObjectHideFlags: 0
@@ -706,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4903e09d2675e47a9b8aabf41755c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelToLoad: 1
 --- !u!23 &2103244081
 MeshRenderer:
   m_ObjectHideFlags: 0

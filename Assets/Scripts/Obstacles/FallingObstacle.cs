@@ -16,6 +16,8 @@ public class FallingObstacle : MonoBehaviour {
 	public Vector3 HeightedOriginalPosition;
 
 	private Rigidbody rb;
+
+	public bool IsSphere = true;
 	void Awake(){
 
 		rb = GetComponent<Rigidbody> ();
@@ -54,8 +56,12 @@ public class FallingObstacle : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Player") {
 			//Destroy the obstacle
-			GetComponentInChildren<SplitMeshIntoTriangles>().SplitMesh();
-			GameObject.FindObjectOfType<PlayerManager>().HitByObstacle();
+			if (GetComponentInChildren<SplitMeshIntoTriangles> ())
+				GetComponentInChildren<SplitMeshIntoTriangles> ().SplitMesh ();
+			PlayerManager.Instance.HitByObstacle ();
+		} else {
+			if (!IsSphere)
+				rb.velocity = new Vector3 (-10, 0, 0);
 		}
 	}
 }

@@ -9,9 +9,9 @@ public class PlayerManager : MonoBehaviour {
 
 
 	/*
-	 *	HUD manager reference 
+	 * Instance for the player manager
 	 */
-	PlayerHUDManager HUD;
+	public static PlayerManager Instance{ set; get; }
 
 	/*
 	 *	Active player controller
@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour {
 	public int NumCoins = 0;
 
 	void Awake(){
-		Item.PM = this;
+		Instance = this;
 		foreach (Transform child in transform) {
 			if (child.gameObject.tag == "Player") {
 				if (child.gameObject.activeInHierarchy) {
@@ -87,7 +87,6 @@ public class PlayerManager : MonoBehaviour {
 			}
 		}
 		DistanceRun = 0f;
-		HUD = FindObjectOfType<PlayerHUDManager> ();
 		//Set the first active child as active player
 
 		lastZPosition = CurrentActivePlayer.transform.position.z;
@@ -188,13 +187,13 @@ public class PlayerManager : MonoBehaviour {
 	public void DecreaseHP(){
 		if (HP > 0) {
 			HP--;
-			HUD.DecreaseHP ();
+			PlayerHUDManager.Instance.DecreaseHP ();
 		}
 	}
 	public void IncreaseHP(){
 		if (HP < 3) {
 			HP++;
-			HUD.IncreaseHP ();
+			PlayerHUDManager.Instance.IncreaseHP ();
 		}
 	}
 

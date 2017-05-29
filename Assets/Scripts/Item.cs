@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour {
 
-	public static PlayerManager PM;
 	public static float MagnetTimer = 10f;
 	public static float MagnetRadius = 5f;
 	public enum ItemType{
@@ -22,19 +21,19 @@ public class Item : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			switch (type) {
 			case ItemType.Coin:
-				PM.NumCoins++;
+				PlayerManager.Instance.NumCoins++;
 				break;
 			case ItemType.Health:
-				PM.IncreaseHP ();
+				PlayerManager.Instance.IncreaseHP ();
 				break;
 			case ItemType.Powerup_Lightning:
-				PM.AddPowerUp (type);
+				PlayerManager.Instance.AddPowerUp (type);
 				break;
 			case ItemType.Powerup_Magnet:
-				PM.AddPowerUp (type);
+				PlayerManager.Instance.AddPowerUp (type);
 				break;
 			case ItemType.Powerup_Shield:
-				PM.AddPowerUp (type);
+				PlayerManager.Instance.AddPowerUp (type);
 				break;
 			default:
 				break;

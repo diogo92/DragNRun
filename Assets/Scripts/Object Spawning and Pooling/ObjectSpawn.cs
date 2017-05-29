@@ -26,14 +26,12 @@ public class ObjectSpawn : MonoBehaviour {
 
 	//Reference to object points;
 	public Transform[] objectSpawnTransforms;
-	GroundSpawner GS;
 	List<GameObject> SpawnedObjects;
 	ObjectPooling pool;
 
 	bool initialDisable=true;
 
 	void Awake(){
-		GS = FindObjectOfType<GroundSpawner> ();
 		pool = FindObjectOfType<ObjectPooling> ();
 	}
 
@@ -58,7 +56,7 @@ public class ObjectSpawn : MonoBehaviour {
 
 	//Spawn an obstacle
 	void SpawnObstacle(){
-		GameObject NewObstacle = pool.GetObstacle (GS.AreaIndex);
+		GameObject NewObstacle = pool.GetObstacle ();
 		int randPos = Random.Range (0, objectSpawnTransforms.Length-1);
 		NewObstacle.transform.position = objectSpawnTransforms[randPos].position;
 		if (NewObstacle.GetComponent<SpikeObstacle> ())

@@ -12,5 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/WaterFrontCliff.unity
     guid: 9a975fd8cb9835d49991cd9effaa70e6
   - enabled: 1
-    path: Assets/Scenes/TestTransition.unity
+    path: Assets/Scenes/Sector9Slums.unity
     guid: d3dcd56fb7cffbb4fb7234ba8be05dfd
