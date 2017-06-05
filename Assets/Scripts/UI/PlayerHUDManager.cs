@@ -42,6 +42,7 @@ public class PlayerHUDManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Update UI texts
 		DistanceRunText.text = Mathf.RoundToInt(PlayerManager.Instance.DistanceRun).ToString() + " m";
 		NumCoinsText.text = "x"+PlayerManager.Instance.NumCoins.ToString();
 		NumBolts.text = "x"+PlayerManager.Instance.NumBolts.ToString();
@@ -49,7 +50,7 @@ public class PlayerHUDManager : MonoBehaviour {
 		MagnetTimeLeft.text = Mathf.RoundToInt (PlayerManager.Instance.MagnetTimeLeft).ToString () + "s";
 	}
 
-
+	//Update the HUD HP image fill amount
 	public void IncreaseHP(){
 		HPImage.fillAmount += (1f / 3f);
 	}
@@ -57,6 +58,7 @@ public class PlayerHUDManager : MonoBehaviour {
 		HPImage.fillAmount -= (1f / 3f);
 	}
 
+	//When changing level, update the HUD images and text color
 	public void ChangeLevel(SceneManagement.LevelName level){
 		for (int i = 0; i < LevelPanelImages.Length; i++) {
 			LevelPanelImages [i].SetActive (false);
@@ -85,6 +87,18 @@ public class PlayerHUDManager : MonoBehaviour {
 			DistanceStaticText.color = Color.white;
 			LevelName.text = "Sector 9 Slums";
 			LevelPanelImages [1].SetActive (true);
+			break;
+		case SceneManagement.LevelName.StardustRuins:
+			LevelName.color = Color.white;
+			DistanceRunText.color = Color.white;
+			NumCoinsText.color = Color.white;
+			MagnetTimeLeft.color = Color.white;
+			NumShields.color = Color.white;
+			NumBolts.color = Color.white;
+			HPText.color = Color.white;
+			DistanceStaticText.color = Color.white;
+			LevelName.text = "Stardust Ruins";
+			LevelPanelImages [2].SetActive (true);
 			break;
 		}
 	}

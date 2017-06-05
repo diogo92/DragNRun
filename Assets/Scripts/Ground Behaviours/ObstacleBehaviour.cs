@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /*
  * 
- * Behavior for obstacle objects by Diogo Ribeiro
+ * Behavior for obstacle objects
  *
  */
 public class ObstacleBehaviour : MonoBehaviour {

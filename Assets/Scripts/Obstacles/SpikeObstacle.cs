@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Behaviour for the spike type obstacle
+ */
 public class SpikeObstacle : MonoBehaviour {
 	List<string> animations = new List<string>();
 	Animation anim;

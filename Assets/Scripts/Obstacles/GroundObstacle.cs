@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Behaviour class for a ground static type obstacle
+ */
 public class GroundObstacle : MonoBehaviour {
 
 	// Use this for initialization

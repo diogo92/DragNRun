@@ -1445,10 +1445,6 @@ MonoBehaviour:
   - {fileID: 1036067958660024, guid: cb5267d9501786e41b7670e3416e2093, type: 2}
   - {fileID: 1897383033156652, guid: 1e2edd0ef12287c4397b9eaae027851f, type: 2}
   ObstaclePrefabs:
-  - {fileID: 1777508678778416, guid: ab1e142c320bfcd4a95618db19d2a3bc, type: 2}
-  - {fileID: 1012522123973622, guid: 5e49f63f75e1ef14ca739b4ed674fead, type: 2}
-  - {fileID: 1329399779974760, guid: 457fe119293734744ab29d2a07ca2e0a, type: 2}
-  - {fileID: 1183472599372662, guid: 9c647627501b7a14e854c153fc3ff1c3, type: 2}
   - {fileID: 1231762946339516, guid: e521d1527dd44fb48aa167bcfe8027eb, type: 2}
 --- !u!4 &1480217471
 Transform:

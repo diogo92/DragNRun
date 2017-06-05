@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Behaviour class for a falling type obstacle
+ */
 public class FallingObstacle : MonoBehaviour {
 
 	public float rotationSpeed = 180f;
@@ -18,10 +21,11 @@ public class FallingObstacle : MonoBehaviour {
 	private Rigidbody rb;
 
 	public bool IsSphere = true;
-	void Awake(){
 
+	void Awake(){
 		rb = GetComponent<Rigidbody> ();
 	}
+
 	void Start(){
 		OriginalPosition = transform.localPosition;
 		rb.AddTorque(new Vector3(0,0,rotationSpeed));

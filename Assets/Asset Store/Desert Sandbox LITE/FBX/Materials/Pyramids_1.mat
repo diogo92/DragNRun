@@ -2,42 +2,55 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Pyramids_1
-  m_Shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_Shader: {fileID: 4800000, guid: 7ffdd7b3bdd4ec54fbfa139e1f55274c, type: 3}
+  m_ShaderKeywords: _LIGHTMODE_DEFAULT _USE_M_TEX
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 2800000, guid: e64d958746ed9aa4db991a093f9b980f, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _BumpMap
-        second:
-          m_Texture: {fileID: 2800000, guid: 1dcd28d557f083e4ebb547179f92a3b1, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 1dcd28d557f083e4ebb547179f92a3b1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e64d958746ed9aa4db991a093f9b980f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Shininess
-        second: .509936929
+    - _Brightness: 1.33
+    - _Bumpiness: 1
+    - _CullMode: 2
+    - _LThreshold: 0.6
+    - _LightLevelsDiffuse: 3
+    - _LightLevelsSpecular: 3
+    - _LightMode: 0
+    - _OutlineSize: 0.005
+    - _RimSize: 3
+    - _Shininess: 0.5099369
+    - _Smoothness: 0.01
+    - _ToonyFy: 0.58
+    - _UseCustomShadow: 0
+    - _UseMTex: 1
+    - _UseNormalMap: 0
+    - _UseRim: 0
+    - _UseSpecular: 0
     m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: .683823526, g: .647933185, b: .577713013, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: .786764741, g: .721413791, b: .615846872, a: 1}
+    - _Color: {r: 0.6838235, g: 0.6479332, b: 0.577713, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.26, g: 0.19, b: 0.16, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 0.37}
+    - _SpecColor: {r: 0.78676474, g: 0.7214138, b: 0.6158469, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

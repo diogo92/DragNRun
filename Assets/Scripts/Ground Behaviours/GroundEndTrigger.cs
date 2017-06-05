@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Class for collision checking with a platform end limit
+ */
 public class GroundEndTrigger : MonoBehaviour {
 
 	GroundSpawner spawner;

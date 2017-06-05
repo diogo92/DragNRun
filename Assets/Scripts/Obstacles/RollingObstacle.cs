@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Behaviour class for a rolling type obstacle
+ */
 public class RollingObstacle : MonoBehaviour {
 
 	public float rotationSpeed = 5f;
